@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kushal HR — Portfolio</title>
+
+  <!-- Google Fonts: Space Grotesk for headlines (techy, geometric), Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-name">Kushal HR</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#startups">Startups</a>
+        <a href="#book">Book</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ 1. HOME / HERO ============ -->
+  <section id="home" class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Hi, I'm</p>
+      <h1 class="hero-name">Kushal HR</h1>
+      <p class="hero-headline">
+        I build where hardware meets software — from embedded systems to
+        startups to stories.
+      </p>
+      <p class="hero-intro">
+        I'm an ECE student exploring VLSI, IoT, and embedded systems, while
+        also diving into programming and emerging technologies. I like
+        turning ideas into practical projects — and lately, into startups
+        and a novel too.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">See my projects</a>
+        <a href="#about" class="btn btn-secondary">About me</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <h2>About me</h2>
+
+      <div class="about-grid">
+        <div class="about-block">
+          <h3>Biography</h3>
+          <p>I'm an Electronics and Communication Engineering (ECE) student
+            with a strong interest in both electronics and software
+            technologies. I'm particularly interested in VLSI, IoT,
+            embedded systems, and digital electronics, while also exploring
+            programming, software development, and emerging technologies in
+            computer science. I enjoy learning how hardware and software
+            work together to build practical, innovative solutions, and I'm
+            continuously developing my skills through projects and
+            hands-on learning.</p>
+        </div>
+
+        <div class="about-block">
+          <h3>Education</h3>
+          <p>Bachelor of Engineering (BE) — currently in 3rd year.</p>
+        </div>
+
+        <div class="about-block">
+          <h3>Interests</h3>
+          <p>VLSI, IoT, embedded systems, and emerging technologies. I enjoy
+            building projects, exploring new ideas, and combining hardware
+            with software to create practical solutions — and I'm always
+            looking for opportunities to grow as an engineer.</p>
+        </div>
+
+        <div class="about-block">
+          <h3>Goals</h3>
+          <p>[Add your goals here — what you're working toward next.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. PROJECTS ============ -->
+  <section id="projects" class="section section-alt">
+    <div class="section-inner">
+      <h2>Projects</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <h3>DSB-SC Modulation &amp; Demodulation</h3>
+          <p>Simulated and analyzed Double Sideband Suppressed Carrier
+            (DSB-SC) modulation and demodulation using MATLAB Simulink to
+            understand signal transmission and recovery.</p>
+          <p class="card-meta">MATLAB, Simulink</p>
+          <div class="card-links">
+            <a href="#">GitHub</a>
+            <a href="#">Live demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>SSB Modulation &amp; Demodulation</h3>
+          <p>Designed and simulated Single Sideband (SSB) modulation and
+            demodulation using MATLAB Simulink, focusing on efficient
+            bandwidth utilization in communication systems.</p>
+          <p class="card-meta">MATLAB, Simulink</p>
+          <div class="card-links">
+            <a href="#">GitHub</a>
+            <a href="#">Live demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Expense Tracker</h3>
+          <p>Developed an expense-tracking application to record, organize,
+            and manage daily expenses while practicing programming and
+            data-handling concepts.</p>
+          <p class="card-meta">C, Python</p>
+          <div class="card-links">
+            <a href="#">GitHub</a>
+            <a href="#">Live demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Smart Solar Road for Future Transportation</h3>
+          <p>Developed a concept for a smart solar-powered road system aimed
+            at supporting sustainable and future-ready transportation
+            through the integration of renewable energy and smart
+            infrastructure.</p>
+          <p class="card-meta">Solar Energy, Smart Infrastructure, IoT Concepts</p>
+          <div class="card-links">
+            <a href="#">GitHub</a>
+            <a href="#">Live demo</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. STARTUPS ============ -->
+  <section id="startups" class="section">
+    <div class="section-inner">
+      <h2>Startups</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <h3>Tech Fusion</h3>
+          <p class="status-tag">In progress</p>
+          <p>A technology-focused startup working on electronics projects
+            and creating engaging electronic and technical content.</p>
+          <p><strong>What it does:</strong> Explores innovative ideas and
+            makes technology more accessible through practical projects and
+            content.</p>
+          <div class="card-links">
+            <a href="https://www.facebook.com/share/1DM1CudxMF/" target="_blank" rel="noopener">Visit page</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Zuno</h3>
+          <p class="status-tag">Not yet launched</p>
+          <p>A creative digital platform that started as a wallpaper
+            website, offering visually appealing digital wallpapers.</p>
+          <p><strong>What it does:</strong> Gradually expanding into other
+            areas of interest, with the goal of building a broader digital
+            ecosystem around creativity and technology.</p>
+          <div class="card-links">
+            <a href="https://zunowallpapers.vercel.app/" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. BOOK ============ -->
+  <section id="book" class="section section-alt">
+    <div class="section-inner">
+      <h2>Book</h2>
+      <div class="book-layout">
+        <div class="book-cover" aria-hidden="true">
+          <span>Cover<br />coming soon</span>
+        </div>
+        <div class="book-details">
+          <h3>Three Strangers, One Journey</h3>
+          <p>A coming-of-age novel about Rahul, Dhruv, and Varun — three
+            teenagers who begin their journey as strangers at a residential
+            coaching institute. As they navigate academic pressure,
+            failures, laughter, friendship, heartbreak, and countless
+            challenges, they gradually discover what truly matters beyond
+            marks and ranks. The story captures the chaos, emotions, and
+            growth of student life while celebrating friendship,
+            perseverance, and the journey of finding yourself.</p>
+          <div class="card-links">
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. SKILLS ============ -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>C</li>
+        <li>MATLAB</li>
+        <li>MultiSIM</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 7. CONTACT ============ -->
+  <section id="contact" class="section section-alt">
+    <div class="section-inner">
+      <h2>Contact</h2>
+      <p>Feel free to reach out — I'm always happy to talk about
+        electronics, embedded systems, startups, or writing.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:kushalhr730@gmail.com">kushalhr730@gmail.com</a></li>
+        <li><span>GitHub</span><a href="https://github.com/kushalhr730-pixel" target="_blank" rel="noopener">github.com/kushalhr730-pixel</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/kushal-hr-a57701415" target="_blank" rel="noopener">linkedin.com/in/kushal-hr-a57701415</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Kushal HR. Built while learning to code.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+  
