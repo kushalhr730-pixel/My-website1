@@ -1,0 +1,459 @@
+/* ==========================================================
+   1. TOKENS — the base palette and type scale. Change these
+      and the whole site updates, since everything else below
+      reads from these variables instead of hardcoded values.
+   ========================================================== */
+:root {
+  --bg: #0a0e17;          /* deep navy-black background */
+  --bg-alt: #0f1522;      /* slightly lighter panel, for alternating sections */
+  --surface: #131a29;     /* card background */
+  --text: #dbe4f0;        /* main text, soft blue-white */
+  --text-dim: #8a95a8;    /* secondary/muted text */
+  --cyan: #45e0f0;        /* primary accent */
+  --blue: #5b7cfa;        /* secondary accent, used in gradients */
+  --border: #1f2937;      /* hairline border on dark backgrounds */
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --max-width: 780px;
+  --radius: 8px;
+}
+
+/* ==========================================================
+   2. RESET — small set of baseline resets so every browser
+      renders the page the same way.
+   ========================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #f2f6fb;
+  margin: 0 0 0.5em 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1em 0;
+  color: var(--text-dim);
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: #8ff0fb;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect people who've asked their OS to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-inner {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================
+   3. NAVIGATION
+   ========================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f2f6fb;
+}
+
+.nav-name:hover {
+  text-decoration: none;
+  color: var(--cyan);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+/* ==========================================================
+   4. HERO (HOME SECTION)
+   ========================================================== */
+.hero {
+  position: relative;
+  padding: 7rem 1.5rem 5.5rem;
+  overflow: hidden;
+}
+
+/* A quiet dot-grid pattern behind the hero text — a nod to a
+   circuit board / schematic, without being a busy animation. */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 20%, black 40%, transparent 90%);
+  mask-image: radial-gradient(ellipse 70% 60% at 30% 20%, black 40%, transparent 90%);
+}
+
+.hero-inner {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  animation: rise 0.7s ease-out both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-eyebrow {
+  color: var(--cyan);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero-headline {
+  font-size: 1.25rem;
+  color: var(--text);
+  max-width: 560px;
+}
+
+.hero-intro {
+  color: var(--text-dim);
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  color: #06131c;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  color: #06131c;
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ==========================================================
+   5. GENERAL SECTION LAYOUT
+   ========================================================== */
+.section {
+  padding: 4.5rem 1.5rem;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================
+   6. ABOUT
+   ========================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.about-block h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: var(--cyan);
+}
+
+/* ==========================================================
+   7. CARDS — reused for Projects and Startups
+   ========================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--cyan);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+}
+
+.card-meta {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.card-links {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.status-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--cyan);
+  background: rgba(69, 224, 240, 0.1);
+  border: 1px solid rgba(69, 224, 240, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+/* ==========================================================
+   8. BOOK
+   ========================================================== */
+.book-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.book-cover {
+  flex-shrink: 0;
+  width: 160px;
+  height: 220px;
+  background: linear-gradient(135deg, var(--surface), var(--bg-alt));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.book-details {
+  flex: 1;
+}
+
+/* ==========================================================
+   9. SKILLS
+   ========================================================== */
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   10. CONTACT
+   ========================================================== */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list span {
+  width: 90px;
+  flex-shrink: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   11. FOOTER
+   ========================================================== */
+.footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+}
+
+/* ==========================================================
+   12. RESPONSIVE — mobile layout
+   ========================================================== */
+@media (max-width: 720px) {
+  .about-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-layout {
+    flex-direction: column;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+}
